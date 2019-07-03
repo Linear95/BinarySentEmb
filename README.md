@@ -11,7 +11,7 @@ This project is maintained by [Pengyu Cheng](https://linear95.github.io/). Feel 
 This code is written in python. The dependencies are:
 * Python 3.6
 * Pytorch>=0.4 (0.4.1 is recommended)
-* NLTK >= 3
+* NLTK>=3
 
 
 ## Download pretrained models:
@@ -32,7 +32,7 @@ curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/inferse
 
 
 ## Evaluate the binary encoder on transfer tasks
-
+Following the instruction of [SentEval](https://github.com/facebookresearch/SentEval) to download the sentence embeddings evaluation toolkit.
 
 -----------------------------------------------------------------------------------------------
 ## Citation 
@@ -41,9 +41,9 @@ Please cite our ACL paper if you found the code useful.
 ```latex
 @article{shen2019learning,
   title={Learning Compressed Sentence Representations for On-Device Text Processing},
-    author={Shen, Dinghan and Cheng, Pengyu and Sundararaman, Dhanasekar and Zhang, Xinyuan and Yang, Qian and Tang, Meng and Celikyilmaz, Asli and Carin, Lawrence},
-      journal={arXiv preprint arXiv:1906.08340},
-        year={2019}
+  author={Shen, Dinghan and Cheng, Pengyu and Sundararaman, Dhanasekar and Zhang, Xinyuan and Yang, Qian and Tang, Meng and Celikyilmaz, Asli and Carin, Lawrence},
+  journal={arXiv preprint arXiv:1906.08340},
+  year={2019}
 }
 ```
 
