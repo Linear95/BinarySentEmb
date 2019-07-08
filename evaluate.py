@@ -15,10 +15,10 @@ import discrete_encoders as DisEnc
 import config
 
 # Set PATHs
-PATH_TO_INFERSENT = '../InferSent-master/'
-PATH_TO_SENTEVAL = '../sent_emb/'
-PATH_TO_DATA = '../SentEval-master/data'
-PATH_TO_W2V = './dataset/GloVe/glove.840B.300d.txt'
+PATH_TO_INFERSENT = '../InferSent-master/'  # path to Infersent
+PATH_TO_SENTEVAL = '../sent_emb/'           # path to SentEval
+PATH_TO_DATA = '../SentEval-master/data'             
+PATH_TO_W2V = './dataset/GloVe/glove.840B.300d.txt'  # path to GloVe word embedding
 PATH_TO_CONT_ENCODER = './encoder/infersent1.pkl'
 
 
@@ -29,7 +29,7 @@ sys.path.insert(0, PATH_TO_SENTEVAL)
 import senteval.engine_cosine as engine_cosine
 import senteval.engine_hamming as engine_hamming
 
-sys.path.insert(0, PATH_TO_INFERENCE)
+sys.path.insert(0, PATH_TO_INFERSENT)
 from models import InferSent
 
 def prepare(params, samples):
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     params_model = {'bsize': 64, 'word_emb_dim': 300, 'enc_lstm_dim': 2048,
                     'pool_type': 'max', 'dpout_model': 0.0, 'version': 1}
     model = InferSent(params_model)
-    model.load_state_dict(torch.load(INFERSENT_PATH))
+    model.load_state_dict(torch.load(PATH_TO_CONT_ENCODER))
     model.set_w2v_path(PATH_TO_W2V)
 
     model_name = config.encoder_type
