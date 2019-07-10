@@ -15,12 +15,12 @@ import discrete_encoders as DisEnc
 import config
 
 # Set PATHs
-PATH_TO_INFERSENT = '../../InferSent-master/'  # path to Infersent
+PATH_TO_INFERSENT = '../../InferSent-master/'         # path to Infersent
 PATH_TO_SENTEVAL = '../../SentEval-master/'           # path to SentEval
-PATH_TO_DATA = '../../SentEval-master/data'             
-PATH_TO_W2V = '../../BinarySentEmb/dataset/GloVe/glove.840B.300d.txt'  # path to GloVe word embedding
-PATH_TO_CONT_ENCODER = '../../BinarySentEmb/encoder/infersent1.pkl'
-PATH_TO_B_ENCODER = '../../BinarySentEmb/encoder/bEncoder2048.pkl'
+PATH_TO_DATA = PATH_TO_SENTEVAL + 'data'              # path to transfer task datasets
+PATH_TO_W2V = './dataset/GloVe/glove.840B.300d.txt'   # path to GloVe word embedding
+PATH_TO_CONT_ENCODER = './encoder/infersent1.pkl'
+PATH_TO_B_ENCODER = './encoder/bEncoder2048.pkl'
 
 
 #assert os.path.isfile(INFERSENT_PATH) and os.path.isfile(PATH_TO_W2V), \    'Set MODEL and GloVe PATHs'
@@ -90,5 +90,6 @@ if __name__ == "__main__":
     elif config.sim_type == 'hamming':
         se = engine_hamming.SE(params_senteval, batcher, prepare)
 
-    results = se.eval(config.transfer_tasks)
+    results = se.eval(['MR', 'CR','STS12', 'STS13', 'STS14', 'STS15', 'STS16','MRPC','SICKRelatedness','STSBenchmark','SICKEntailment','SICKRelatedness', 'MPQA', 'SUBJ', 'SST2', 'SST5']#,  'MRPC',
+
     print(results)
