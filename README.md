@@ -30,7 +30,7 @@ mkdir encoder
 curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/infersent1.pkl
 ```
 
-Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the encoder folder.
+Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the `encoder` folder.
 
 ## Evaluate the binary encoder on transfer tasks
 Following the instruction of [SentEval](https://github.com/facebookresearch/SentEval) to download the sentence embeddings evaluation toolkit.
@@ -39,8 +39,10 @@ To reproduce results of our binary sentence embeddings, run the command:
 ```bash
 python evaluate.py
 ```
-The results will show that our binary sentence encoder only lose 1\% performance compared with the original [InferSent](https://github.com/facebookresearch/InferSent) model.
------------------------------------------------------------------------------------------------
+
+The results will show that our binary sentence encoder only lose 1\%- 2\% performance compared with the original [InferSent](https://github.com/facebookresearch/InferSent) model.
+
+
 ## Citation 
 Please cite our ACL paper if you found the code useful.
 
