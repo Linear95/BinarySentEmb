@@ -15,19 +15,20 @@ import discrete_encoders as DisEnc
 import config
 
 # Set PATHs
-PATH_TO_INFERSENT = '../InferSent-master/'  # path to Infersent
-PATH_TO_SENTEVAL = '../sent_emb/'           # path to SentEval
-PATH_TO_DATA = '../SentEval-master/data'             
-PATH_TO_W2V = './dataset/GloVe/glove.840B.300d.txt'  # path to GloVe word embedding
-PATH_TO_CONT_ENCODER = './encoder/infersent1.pkl'
+PATH_TO_INFERSENT = '../../InferSent-master/'  # path to Infersent
+PATH_TO_SENTEVAL = '../../SentEval-master/'           # path to SentEval
+PATH_TO_DATA = '../../SentEval-master/data'             
+PATH_TO_W2V = '../../BinarySentEmb/dataset/GloVe/glove.840B.300d.txt'  # path to GloVe word embedding
+PATH_TO_CONT_ENCODER = '../../BinarySentEmb/encoder/infersent1.pkl'
+PATH_TO_B_ENCODER = '../../BinarySentEmb/encoder/bEncoder2048.pkl'
 
 
 #assert os.path.isfile(INFERSENT_PATH) and os.path.isfile(PATH_TO_W2V), \    'Set MODEL and GloVe PATHs'
 
 # import senteval
 sys.path.insert(0, PATH_TO_SENTEVAL)
-import senteval.engine_cosine as engine_cosine
-import senteval.engine_hamming as engine_hamming
+import senteval.engine as engine_cosine
+#import senteval.engine_hamming as engine_hamming
 
 sys.path.insert(0, PATH_TO_INFERSENT)
 from models import InferSent
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     model_name = config.encoder_type
     if config.encoder_type == 'AE':
         dis_encoder = DisEnc.LinearAutoEncoder(config.dim)
-        dis_encoder.load_state_dict(torch.load(config.PATH_TO_AE+config.model_name))
+        dis_encoder.load_state_dict(torch.load(PATH_TO_B_ENCODER))
         model_name = model_name + '_' + config.model_name #+'V'+str(config.INFERSENT_VERSION)
     elif config.encoder_type == 'PCA':
         dis_encoder = DisEnc.PCAEncoder(config.dim,config.PCA_LOAD_PATH)

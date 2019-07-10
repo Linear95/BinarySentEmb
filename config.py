@@ -12,7 +12,7 @@ model_name = 'bEncoder2048.pkl'
 #'linear_d2048_f2048epoch10l0.8n7ran2018MR_MRPC_best'#
 PATH_TO_AE ='./encoder/'
 encoder_type = 'AE'#'AE' #'PCA','Random' 'Id' 'HT'
-sim_type = 'hamming'#'cosine' #'hamming'
+sim_type = 'cosine'#'cosine' #'hamming'
 
 transfer_tasks = ['MRPC','SICKRelatedness','STSBenchmark','SICKEntailment','SICKRelatedness','STS12', 'STS13', 'STS14', 'STS15', 'STS16','MR', 'CR', 'MPQA', 'SUBJ', 'SST2', 'SST5']#,  'MRPC',
                       #'SICKEntailment', 'SICKRelatedness', 'STSBenchmark'] # 'TREC',
