@@ -3,7 +3,7 @@ Codes for the ACL 2019 paper: Learning Compressed Sentence Representations for O
 
 
 This repository contains source code necessary to reproduce the results presented in the following paper:
-* [*Learning Compressed Sentence Representations for On-Device Text Processing*](http://people.ee.duke.edu/~lcarin/Compressed_ACL2019.pdf) (ACL 2019)
+* [*Learning Compressed Sentence Representations for On-Device Text Processing*](https://arxiv.org/pdf/1906.08340.pdf) (ACL 2019)
 
 This project is maintained by [Pengyu Cheng](https://linear95.github.io/). Feel free to contact pengyu.cheng@duke.edu for any relevant issues.
 
@@ -30,7 +30,7 @@ mkdir encoder
 curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/infersent1.pkl
 ```
 
-Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the `encoder` folder.
+Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the `./encoder/` folder.
 
 ## Evaluate the binary encoder on transfer tasks
 Following the instruction of [SentEval](https://github.com/facebookresearch/SentEval) to download the sentence embeddings evaluation toolkit.
@@ -40,7 +40,7 @@ To reproduce results of our binary sentence embeddings, run the command:
 python evaluate.py
 ```
 
-The results will show that our binary sentence encoder only lose 1\%- 2\% performance compared with the original [InferSent](https://github.com/facebookresearch/InferSent) model.
+The results will show that our binary sentence encoder only lose 1\% ~ 2\% performance compared with the original [InferSent](https://github.com/facebookresearch/InferSent) model.
 
 
 ## Citation 
