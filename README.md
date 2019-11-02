@@ -33,7 +33,7 @@ curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/inferse
 Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the `./encoder/` folder.
 
 ## Train a binary encoder
-To train a binary sentence encoder, first download `data.py`, `mutils.py`, and `models.py` from [InferSent](https://github.com/facebookresearch/InferSent) to current folder `./`.
+To train a binary sentence encoder, first download `data.py`, `mutils.py`, and `models.py` from [InferSent](https://github.com/facebookresearch/InferSent). 
 
 Then, run the command:
 
