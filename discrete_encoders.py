@@ -27,10 +27,10 @@ class HTEncoder(nn.Module):
 
     
 class RandomEncoder(nn.Module):
-    def __init__(self,dim,LOAD_PATH):
+    def __init__(self,dim,load_dir):
         super(RandomEncoder,self).__init__()    
         self.project_mat =  torch.randn(4096,dim).cuda()
-        self.emb_mean = torch.from_numpy(np.load(LOAD_PATH + 'emb_mean.npy')).cuda()
+        self.emb_mean = torch.from_numpy(np.load(load_dir + 'emb_mean.npy')).cuda()
         self.emb_mean = self.emb_mean.view(1,4096)
         
     def encode(self, x):
@@ -41,11 +41,11 @@ class RandomEncoder(nn.Module):
     
 
 class PCAEncoder(nn.Module):
-    def __init__(self,dim,LOAD_PATH):
+    def __init__(self,dim,load_dir):
         super(PCAEncoder,self).__init__()
-        np_project_mat = np.load(LOAD_PATH + 'trans_mat.npy')
+        np_project_mat = np.load(load_dir + 'trans_mat.npy')
         self.project_mat = torch.from_numpy(np_project_mat[:,:dim]).cuda()
-        self.emb_mean = torch.from_numpy(np.load(LOAD_PATH + 'emb_mean.npy')).cuda()
+        self.emb_mean = torch.from_numpy(np.load(load_dir + 'emb_mean.npy')).cuda()
         self.emb_mean = self.emb_mean.view(1,4096)
         
     def encode(self, x):
@@ -56,7 +56,7 @@ class PCAEncoder(nn.Module):
 
     
 class LinearAutoEncoder(nn.Module):
-    def __init__(self,dim):
+    def __init__(self, dim):
         super(LinearAutoEncoder, self).__init__()
         
         self.encoder = nn.Sequential(
@@ -87,11 +87,10 @@ class NonlinearAutoEncoder(nn.Module):
         super(NonlinearAutoEncoder, self).__init__()
         
         self.encoder = nn.Sequential(
-            nn.Linear(2* 2048, config.fc_dim),
+            nn.Linear(2* 2048, fc_dim),
             nn.Tanh(),
-            nn.Linear(config.fc_dim, dim)
+            nn.Linear(fc_dim, dim)
         )
-        
         self.decoder = nn.Sequential(
             nn.Linear(dim, 2*2048)
         )

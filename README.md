@@ -32,12 +32,21 @@ curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/inferse
 
 Futhermore, download our pretrained binary sentence encoder from [here](https://drive.google.com/open?id=12lzqtxQwktywXRc1HsQ36ptHGfGOTcIJ). Make sure the binary encoder is also in the `./encoder/` folder.
 
+## Train a binary encoder
+To train a binary sentence encoder, first download `data.py`, `mutils.py`, and `models.py` from [InferSent](https://github.com/facebookresearch/InferSent) to current folder `./`.
+
+Then, run the command:
+
+```bash
+python train.py
+```
+
 ## Evaluate the binary encoder on transfer tasks
 Following the instruction of [SentEval](https://github.com/facebookresearch/SentEval) to download the sentence embeddings evaluation toolkit and datasets.
 
 Download the original InferSent encoder model from [here](https://github.com/facebookresearch/InferSent). 
 
-To reproduce results of our binary sentence embeddings, run the command:
+To reproduce results of our pretrained binary sentence encoder, run the command:
 ```bash
 python evaluate.py
 ```
