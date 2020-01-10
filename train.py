@@ -146,7 +146,7 @@ def mse(a,b):
     return ((a-b)*(a-b)).mean() 
 
 
-optimizer = torch.optim.Adam(ae_mode.parameters(), lr=ae_lr, weight_decay=1e-5)
+optimizer = torch.optim.Adam(ae_model.parameters(), lr=ae_lr, weight_decay=1e-5)
 
 """
 TRAIN
