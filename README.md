@@ -1,4 +1,6 @@
 # BinarySentEmb
+Code for the ACL 2019 paper: Learning Compressed Sentence Representations for On-Device Text Processing.
+
 
 This repository contains source code necessary to reproduce the results presented in the following paper:
 * [*Learning Compressed Sentence Representations for On-Device Text Processing*](https://arxiv.org/pdf/1906.08340.pdf) (ACL 2019)
