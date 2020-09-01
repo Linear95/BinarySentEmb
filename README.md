@@ -7,14 +7,14 @@ This repository contains source code necessary to reproduce the results presente
 
 This project is maintained by [Pengyu Cheng](https://linear95.github.io/). Feel free to contact pengyu.cheng@duke.edu for any relevant issues.
 
-## Dependencies: 
+## Dependencies
 This code is written in python. The dependencies are:
 * Python 3.6
 * Pytorch>=0.4 (0.4.1 is recommended)
 * NLTK>=3
 
 
-## Download pretrained models:
+## Download pretrained models
 
 First, download [GloVe](https://nlp.stanford.edu/projects/glove/) pretrained word embeddings:
 
